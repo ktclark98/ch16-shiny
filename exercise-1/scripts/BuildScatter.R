@@ -9,11 +9,9 @@
 #   - Label for the x axis (set a default of "X Title")
 #   - Label for the y axis (set a default of "Y Title")
 
-BuildScatterPlot <- function(this.x, this.y, this.color, this.title = "Title", x.title = "X Title", y.title = "Y Title") {
-  p <- plotly(x = this.x, y = this.y, color = this.color, name = title,
-         type = "scatter") %>% 
-    layout(title = this.title,
-           xaxis = x.title,
-           yaxis = y.title)
+BuildScatterPlot <- function(this.data, this.x, this.y, this.color, this.title = "Title", x.title = "X Title", y.title = "Y Title") {
+  p <- ggplot(data = this.data) +
+    geom_point(mapping = aes(x = this.x, y = this.y), color = this.color, title = this.title) +
+    labs(x = x.title, y = y.title)
   return(p)
 }
