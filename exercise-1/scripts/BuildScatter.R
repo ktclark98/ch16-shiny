@@ -11,7 +11,7 @@
 
 BuildScatterPlot <- function(this.data, this.x, this.y, this.color, this.title = "Title", x.title = "X Title", y.title = "Y Title") {
   p <- ggplot(data = this.data) +
-    geom_point(mapping = aes(x = this.x, y = this.y), color = this.color, title = this.title) +
-    labs(x = x.title, y = y.title)
+    geom_point(mapping = aes(x = data[,this.x], y = data[,this.y], color = data[,this.color]), title = this.title) +
+    labs(title = this.title, x = x.title, y = y.title)
   return(p)
 }
