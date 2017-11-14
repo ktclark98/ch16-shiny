@@ -8,4 +8,10 @@ source('./scripts/BuildScatter.R')
 
 # Use your BuildScatter function to draw a well labeled ggplot scatterplot of the iris data
 
-plot <- BuildScatterPlot(iris, 'Petal.Width', 'Sepal.Width', 'Species', 'Sepal vs. Petal Width', 'Petal Width', 'Septal Width')
+plot <- BuildScatterPlot(this.data =iris, 
+                         this.x = 'Petal.Width', 
+                         this.y = 'Sepal.Width', 
+                         this.color = 'Species', 
+                         this.title = 'Sepal vs. Petal Width', 
+                         x.title = 'Petal Width', 
+                         y.title = 'Septal Width')
